@@ -1,0 +1,93 @@
+/* Kindle-optimized stylesheet.
+   Goals: pure white background (no off-white that reads gray on eInk),
+   minimal styling, let the device control fonts and reflow. */
+
+@page { margin: 0; }
+
+html, body {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* Override pandoc's #fdfdfd body and Georgia default — let Kindle pick the font. */
+body {
+  font-family: serif;
+  line-height: 1.4;
+}
+
+p {
+  margin: 0.6em 0;
+  text-indent: 0;
+  orphans: 2;
+  widows: 2;
+}
+
+h1 {
+  font-size: 1.6em;
+  font-weight: bold;
+  margin: 1em 0 0.5em 0;
+  page-break-before: always;
+  page-break-after: avoid;
+}
+
+h2 {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 1em 0 0.4em 0;
+  page-break-after: avoid;
+}
+
+h3 {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 0.8em 0 0.3em 0;
+  page-break-after: avoid;
+}
+
+/* Strip any default backgrounds inherited from container conversion. */
+section, article, div, blockquote, pre, code, table, tr, td, th {
+  background-color: transparent !important;
+}
+
+blockquote {
+  margin: 0.8em 1.5em;
+  font-style: italic;
+}
+
+ul, ol {
+  margin: 0.5em 0 0.5em 1.5em;
+  padding: 0;
+}
+
+li {
+  margin: 0.2em 0;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0.8em 0;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #555;
+  padding: 0.3em 0.5em;
+  text-align: left;
+}
+
+th {
+  font-weight: bold;
+}
+
+code {
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #888;
+  margin: 1em 0;
+}
